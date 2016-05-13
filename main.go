@@ -27,7 +27,7 @@ type WriteSplitter struct {
 	Limit    int            // how many write ops (typically one per line) before splitting the file
 	Dir      string         // files are named: $prefix + $nano-precision-timestamp + '.log'
 	Prefix   string         // files are named: $prefix + $nano-precision-timestamp + '.log'
-	Bytes    bool           // how many bytes before splitting the file
+	Bytes    bool           // split by bytes and not lines
 	numBytes int            // internal byte count
 	numLines int            // internal line count
 	handle   *os.File       // embedded file
