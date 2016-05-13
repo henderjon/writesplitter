@@ -24,13 +24,13 @@ var (
 // preference is given to LineLimit. By default, no splitting occurs because
 // both LineLimit and ByteLimit are zero (0).
 type WriteSplitter struct {
-	Limit    int            // how many write ops (typically one per line) before splitting the file
-	Dir      string         // files are named: $prefix + $nano-precision-timestamp + '.log'
-	Prefix   string         // files are named: $prefix + $nano-precision-timestamp + '.log'
-	Bytes    bool           // split by bytes and not lines
-	numBytes int            // internal byte count
-	numLines int            // internal line count
-	handle   *os.File       // embedded file
+	Limit    int      // how many write ops (typically one per line) before splitting the file
+	Dir      string   // files are named: $prefix + $nano-precision-timestamp + '.log'
+	Prefix   string   // files are named: $prefix + $nano-precision-timestamp + '.log'
+	Bytes    bool     // split by bytes and not lines
+	numBytes int      // internal byte count
+	numLines int      // internal line count
+	handle   *os.File // embedded file
 }
 
 // LineSplitter returns a WriteSplitter set to split at the given number of lines
